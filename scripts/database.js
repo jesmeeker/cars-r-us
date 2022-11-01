@@ -31,7 +31,7 @@ const database = {
         { id: 4, name: "18-inch Pair Spoke Black", price: 1495},
     ],
     customOrders: [
-        {id: 1, paintColorId: 2, interiorId: 4, technologyId: 2, wheelId: 4}        
+        {id: 1, paintColorId: 2, interiorId: 4, technologyId: 2, wheelId: 4, timestamp: 1614659931693}        
     ], 
     orderBuilder: [
         {
@@ -63,7 +63,7 @@ export const getOrders = () => {
 }
 
 export const setPaint = (id) => {
-    database.orderBuilder.paintId = id
+    database.orderBuilder.paintColorId = id
 }
 
 export const setInterior = (id) => {

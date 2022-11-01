@@ -2,9 +2,11 @@
 
 .options {
     flex-basis: 24%;
-    margin: 0 2rem;
+    min-width: 250px;
+    margin: 2rem;
     border: 1px dashed dodgerblue;
-    padding: 1rem;
+    background-color: beige;
+    padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
 }

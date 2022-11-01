@@ -1,6 +1,7 @@
 
 // import { DiamondSizes } from "./DiamondSizes.js"
 // import { JewelryStyles } from "./JewelryStyles.js"
+import { Orders } from "./orders.js"
 import { interior } from "./interior.js"
 import { wheel } from "./wheels.js"
 import { tech } from "./technology.js"
@@ -13,7 +14,8 @@ document.addEventListener(
     (event) => {
 
     if (event.target.id === "orderButton") {
-        const order = addCustomOrder()
+        addCustomOrder()
+
         }
     }
 )
@@ -43,7 +45,7 @@ export const CarsRUs = () => {
         </article>
 
         <article class="customOrders">
-            <h2>Custom Jewelry Orders</h2>
+            <h2>Custom Car Orders</h2>${Orders()}
         </article>
     `
 }
