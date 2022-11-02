@@ -18,9 +18,9 @@ document.addEventListener(
     (changeEvent) => {
 
         if (changeEvent.target.id === "paint") {
-            // const chosenOption = changeEvent.target.value
-            // console.log("Chosen Option")
-            // console.log(chosenOption)
+            const chosenOption = changeEvent.target.value
+            console.log("Chosen Option")
+            console.log(chosenOption)
             setPaint(parseInt(changeEvent.target.value))
         //     console.log("ID:")
         //     console.log(changeEvent.target.id)
