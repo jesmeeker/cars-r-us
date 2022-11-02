@@ -7,6 +7,7 @@ import { wheel } from "./wheels.js"
 import { tech } from "./technology.js"
 import { paint } from "./paint.js"
 import { addCustomOrder } from "./database.js"
+import { BodyStyle } from "./bodyStyle.js"
 
 
 document.addEventListener(
@@ -38,6 +39,12 @@ export const CarsRUs = () => {
             <section class="choices__wheels options">
                 <h2>Wheels</h2>${wheel()}
             </section>
+        </article>
+
+        <article>
+        <section>
+                ${BodyStyle()}
+        </section>
         </article>
 
         <article>

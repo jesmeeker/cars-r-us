@@ -30,8 +30,13 @@ const database = {
         { id: 3, name: "18-inch Pair Spoke Silver", price: 995},
         { id: 4, name: "18-inch Pair Spoke Black", price: 1495},
     ],
+    bodyStyle: [
+        {id: 1, name: "Car", multiplier: 1},
+        {id: 2, name: "SUV", multiplier: 1.5},
+        {id: 3, name: "Truck", multiplier: 2.25}
+    ],
     customOrders: [
-        {id: 1, paintColorId: 2, interiorId: 4, technologyId: 2, wheelId: 4, timestamp: 1614659931693}        
+        {id: 1, paintColorId: 2, interiorId: 4, technologyId: 2, wheelId: 4, bodyStyleId: 2, timestamp: 1614659931693}        
     ], 
     orderBuilder: [
         {
@@ -58,6 +63,10 @@ export const getWheels = () => {
     return database.wheels.map(wheels => ({...wheels}))
 }
 
+export const getBodyStyle = () => {
+    return database.bodyStyle.map(bodyStyle => ({...bodyStyle}))
+}
+
 export const getOrders = () => {
     return database.customOrders.map(customOrders => ({...customOrders}))
 }
@@ -76,6 +85,10 @@ export const setTechnology = (id) => {
 
 export const setWheels = (id) => {
     database.orderBuilder.wheelId = id
+}
+
+export const setBodyStyle = (id) => {
+    database.orderBuilder.bodyStyleId = id
 }
 
 export const addCustomOrder = () => {

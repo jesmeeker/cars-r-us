@@ -1,4 +1,4 @@
-import { getOrders, getPaintColors, getInteriors, getTechnology, getWheels } from "./database.js"
+import { getOrders, getPaintColors, getBodyStyle, getInteriors, getTechnology, getWheels } from "./database.js"
 
 // const order = addCustomOrder()
 
@@ -8,6 +8,7 @@ export const buildOrderListItem = (order) => {
     const interiors = getInteriors()
     const technologies = getTechnology()
     const wheels = getWheels()
+    const bodyStyles = getBodyStyle()
 
     // Remember that the function you pass to find() must return true/false
     const foundPaint = paints.find(
@@ -33,8 +34,14 @@ export const buildOrderListItem = (order) => {
         return wheel.id === order.wheelId
         }
     )
+
+    const foundBodyStyle = bodyStyles.find(
+        (bodyStyle) => {
+            return bodyStyle.id === order.bodyStyleId
+        }
+    )
         
-    const totalCost = foundPaint.price + foundInterior.price + foundTech.price + foundWheel.price
+    const totalCost = (foundPaint.price + foundInterior.price + foundTech.price + foundWheel.price) * foundBodyStyle.multiplier
 
             const costString = totalCost.toLocaleString("en-US", {
                 style: "currency",
@@ -42,7 +49,7 @@ export const buildOrderListItem = (order) => {
             })
     
     return `<li>
-        Order #-${order.id}: ${foundPaint.name} car with ${foundWheel.name} wheels, ${foundInterior.name} interior, and the ${foundTech.name} for a total cost of ${costString}.
+        Order #-${order.id}: ${foundPaint.name} ${foundBodyStyle.name} with ${foundWheel.name} wheels, ${foundInterior.name} interior, and the ${foundTech.name} for a total cost of ${costString}.
     </li>`
 
     // return `<li>
